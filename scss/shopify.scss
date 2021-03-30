@@ -1,0 +1,156 @@
+$primary-color: #fbf7ed;
+$secondary-color: #004c3f;
+$secondary-color-light: #008060;
+
+@mixin btn-style {
+  padding: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.inner-container {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+header {
+  background-color: $primary-color;
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    .nav-right {
+      margin-left: auto;
+    }
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    button {
+      border: none;
+      border-radius: 5px;
+      padding: 15px;
+      font-weight: bold;
+      background: $secondary-color-light;
+      color: white;
+    }
+  }
+  .headline {
+    display: flex;
+    .content {
+      width: 55%;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      h1 {
+        color: $secondary-color;
+        font-weight: 700;
+      }
+      input {
+        font-size: 1.1em;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+      button {
+        @include btn-style;
+        background: $secondary-color-light;
+        color: white;
+      }
+      .subtext {
+        font-size: .8em;
+        color: grey;
+      }
+    }
+    .image {
+      width: 45%;
+      position: relative;
+      background-image: url(../images/hero-stock-small-72c1242fc5bbf6cfe135968110e9c52435af1e389c0fd4fe68208d21427e21e0.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      button {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include btn-style;
+        background: transparent;
+        color: white;
+        img {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+#examples {
+  background: $secondary-color;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .heading {
+    padding-bottom: 50px;
+    h2 {
+      font-size: 2em;
+    }
+    .sub-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        width: 70%;
+      }
+      a {
+        width: 20%;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+  .grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    img {
+      width: 100%;
+      height: auto;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      .type {
+        font-weight: bold;
+        font-size: .9em;
+      }
+    }
+  }
+}
