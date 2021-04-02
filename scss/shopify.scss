@@ -1,6 +1,8 @@
 $primary-color: #fbf7ed;
 $secondary-color: #004c3f;
 $secondary-color-light: #008060;
+$secondary-color-dark: #002e25;
+$font-color-grey: #6b7177;
 
 @mixin btn-style {
   padding: 20px;
@@ -32,6 +34,16 @@ body {
   padding-right: 6%;
 }
 
+button {
+  transition: background-color .3s;
+}
+
+.arrow {
+  width: 20px;
+  height: auto;
+  transition: transform .5s;
+}
+
 header {
   background-color: $primary-color;
   nav {
@@ -39,23 +51,36 @@ header {
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    padding: 20px;
+    img {
+      background: transparent;
+      height: 80px;
+    }
     .nav-right {
       margin-left: auto;
     }
-  }
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-    button {
-      border: none;
-      border-radius: 5px;
-      padding: 15px;
-      font-weight: bold;
-      background: $secondary-color-light;
-      color: white;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      cursor: pointer;
+      color: #42474c;
+      font-weight: 600;
+      li:hover {
+        color: black;
+      }
+      button {
+        border: none;
+        border-radius: 5px;
+        padding: 15px;
+        font-weight: bold;
+        background: $secondary-color-light;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background: $secondary-color;
+        }
+      }
     }
   }
   .headline {
@@ -81,16 +106,19 @@ header {
         @include btn-style;
         background: $secondary-color-light;
         color: white;
+        &:hover {
+          background: $secondary-color;
+        }
       }
       .subtext {
         font-size: .8em;
-        color: grey;
+        color: $font-color-grey;
       }
     }
     .image {
       width: 45%;
       position: relative;
-      background-image: url(../images/hero-stock-small-72c1242fc5bbf6cfe135968110e9c52435af1e389c0fd4fe68208d21427e21e0.jpg);
+      background-image: url(../images/shopify/hero-stock-small-72c1242fc5bbf6cfe135968110e9c52435af1e389c0fd4fe68208d21427e21e0.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       button {
@@ -129,10 +157,18 @@ header {
         width: 70%;
       }
       a {
-        width: 20%;
+        width: 25%;
         color: white;
         text-decoration: none;
         font-weight: bold;
+        &:hover .arrow {
+          transform: translateX(8px);
+        }
+        .arrow {
+          path {
+            fill: white;
+          }
+        }
       }
     }
   }
@@ -143,13 +179,330 @@ header {
     img {
       width: 100%;
       height: auto;
+      padding-bottom: 15px;
     }
     a {
       color: white;
       text-decoration: none;
+      &:hover .type {
+        text-decoration: underline;
+      }
       .type {
         font-weight: bold;
         font-size: .9em;
+      }
+    }
+  }
+}
+
+#steps {
+  background: $secondary-color;
+  color: white;
+  padding-bottom: 100px;
+  h2 {
+    font-size: 2em;
+    padding-bottom: 50px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+#pillars {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .heading {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-bottom: 100px;
+    h2 {
+      font-size: 2.2em;
+      font-weight: 300;
+    }
+    p {
+      color: $font-color-grey;
+    }
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .content {
+      display: flex;
+      gap: 10px;
+      img {
+        width: 50%;
+      }
+      .text {
+        width: 50%;
+        h3 {
+          font-size: 1.8em;
+          font-weight: 300;
+          padding-bottom: 20px;
+        }
+        p {
+          color: $font-color-grey;
+          padding-bottom: 20px;
+        }
+        a {
+          text-decoration: none;
+          color: $secondary-color-light;
+          font-size: 1.2em;
+          font-weight: bold;
+          &:hover .arrow {
+            transform: translateX(8px);
+          }
+          .arrow {
+            path {
+              fill: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#globe {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  .content {
+    width: 70%;
+    h2 {
+      font-size: 2em;
+      font-weight: 300;
+      padding-bottom: 20px;
+    }
+    p {
+      font-size: 1.5em;
+      padding-bottom: 20px;
+      span {
+        font-weight: bold;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $secondary-color-light;
+      font-size: 1.2em;
+      font-weight: bold;
+      &:hover .arrow {
+        transform: translateX(8px);
+      }
+      .arrow {
+        path {
+          fill: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+#testimonials {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    .image {
+      width: 50%;
+      background-image: url("../images/shopify/cee-cees-closet-testimonial@desktop-5fc018d38a878b807f8a9997bb86f3ffc29f03d4323b0e32e30c424376e8ed31.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .quote {
+      width: 50%;
+      text-align: center;
+      background: $secondary-color-dark;
+      color: white;
+      padding: 50px;
+      font-weight: bold;
+      blockquote {
+        font-size: 2em;
+        padding: 40px;
+      }
+      img {
+        height: 70px;
+        width: auto;
+      }
+      figcaption {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-size: 1.2em;
+      }
+      button {
+        border: 1px solid white;
+        border-radius: 5px;
+        background: transparent;
+        color: white;
+        padding: 25px;
+        font-size: 1em;
+        cursor: pointer;
+        &:hover {
+          background: white;
+          color: black;
+        }
+      }
+    }
+  }
+  .logos {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0;
+  }
+}
+
+#help {
+  display: flex;
+  justify-content: center;
+  .content {
+    width: 50%;
+    background: $primary-color;
+    padding: 50px;
+    h2 {
+      font-size: 2em;
+      padding-bottom: 30px;
+    }
+    .links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      h3 {
+        padding-bottom: 10px;
+      }
+      p {
+        color: $font-color-grey;
+        padding-bottom: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: $secondary-color-light;
+        font-weight: bold;
+        &:hover .arrow {
+          transform: translateX(8px);
+        }
+        .arrow {
+          path {
+            fill: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+  .image {
+    width: 50%;
+    background-image: url("../images/shopify/help.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+#signup {
+  text-align: center;
+  padding: 100px 100px 20px 100px;
+  h2 {
+    padding-bottom: 30px;
+  }
+  p {
+    color: $font-color-grey;
+    padding-bottom: 30px;
+  }
+  button {
+    @include btn-style;
+    background: $secondary-color-light;
+    color: white;
+    &:hover {
+      background: $secondary-color;
+    }
+  }
+  .back-to-top-container {
+    text-align: right;
+    padding: 80px 0 10px 0;
+    .back-to-top {
+      color: $secondary-color-light;
+      text-decoration: none;
+      font-weight: bold;
+      &:hover span {
+        transform: translateY(-6px);
+      }
+      span {
+        display: inline-block;
+        transition: transform .5s;
+      }
+    }
+  }
+}
+
+footer {
+  background: $secondary-color-dark;
+  color: white;
+  nav {
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      li {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px transparent solid;
+        transition: border .5s;
+        &:hover {
+          border-bottom: 2px white solid;
+        }
+      }
+    }
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    h3 {
+      padding-bottom: 10px;
+      font-size: 1em;
+    }
+    ul {
+      list-style: none;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: .9em;
+      li {
+        padding: 5px 0;
+        cursor: pointer;
+        transition: color .4s;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    .online-store {
+      column-count: 3;
+    }
+  }
+  .footer-bottom {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      color: rgba(255, 255, 255, 0.6);
+      li {
+        cursor: pointer;
+        transition: color .4s;
+        &:hover {
+          color: white;
+        }
       }
     }
   }
