@@ -5,38 +5,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/shopify.css">
+  <script src="../js/shopify.js" defer></script>
   <title>Document</title>
 </head>
 <body>
-  <header class="container">
-    <nav class="inner-container">
-      <a href="#"><img src="../images/shopify/Shopify-Logo.png" alt=""></a>
-      <ul class="nav-left">
-        <li>Start</li>
-        <li>Sell</li>
-        <li>Market</li>
-        <li>Manage</li>
-      </ul>
+  <nav class="container">
+    <div class="inner-container">
+      <div class="nav-left">
+        <a href="#"><img src="../images/shopify/Shopify-Logo.png" alt=""></a>
+        <ul>
+          <li>Start</li>
+          <li>Sell</li>
+          <li>Market</li>
+          <li>Manage</li>
+        </ul>
+      </div>
       <ul class="nav-right">
         <li>Pricing</li>
         <li>Learn</li>
         <li>Login</li>
         <li><button>Start free trial</button></li>
       </ul>
-    </nav>
+      <div class="hamburger-container">
+        Login
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="logo-container">
+          <a href="#"><img src="../images/shopify/Shopify-Logo.png" alt=""></a>
+          <div class="close">X</div>
+        </div>
+        <ul class="nav-top">
+          <li>Start</li>
+          <li>Sell</li>
+          <li>Market</li>
+          <li>Manage</li>
+        </ul>
+        <ul class="nav-bottom">
+          <li>Pricing</li>
+          <li>Learn</li>
+          <li>Login</li>
+          <li><button>Start free trial</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <div class="headline">
-      <div class="content inner-container">
-        <h1>Anyone, anywhere, can start a business</h1>
-        <form action="">
-          <input type="text" placeholder="Enter your email address">
-          <button>Start free trial</button>
-        </form>
-        <p class="subtext">Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.</p>
-      </div>
-      <div class="image">
-        <button><img src="../images/shopify/Play.svg" alt="play"> Play video</button>
-      </div>
+  <header id="headline" class="container">
+    <div class="content inner-container">
+      <h1>Anyone, anywhere, can start a business</h1>
+      <form action="">
+        <input type="text" placeholder="Enter your email address">
+        <button>Start free trial</button>
+      </form>
+      <p class="subtext">Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.</p>
+    </div>
+    <div class="image">
+      <button><img src="../images/shopify/Play.svg" alt="play"> Play video</button>
     </div>
   </header>
 
