@@ -2,6 +2,7 @@ $primary-color: rgb(41, 65, 171);
 $secondary-color: #1ed760;
 $secondary-color-light: #43E57D;
 $font-color-grey: #919496;
+$max-width: 1200px;
 $sm: 481px;
 $md: 769px;
 $lg: 1025px;
@@ -18,15 +19,45 @@ body {
 }
 
 nav {
-  position: sticky;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
   background: black;
   color: white;
+  .container {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    max-width: $max-width;
+    margin: auto;
+  }
+  @media(min-width: $lg) {
+    padding: 20px 25px;
+  }
+  .desktop-view {
+    display: none;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+    li {
+      cursor: pointer;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    .vertical-separator {
+      width: 2px;
+      height: 20px;
+      background: white;
+    }
+    @media(min-width: $lg) {
+      display: flex;
+    }
+  }
   .hamburger {
     cursor: pointer;
+    @media(min-width: $lg) {
+      display: none;
+    }
     div {
       width: 25px;
       height: 3px;
@@ -46,6 +77,9 @@ nav {
     flex-direction: column;
     transition: .5s;
     line-height: 1.6;
+    @media(min-width: $lg) {
+      display: none;
+    }
     &.show {
       width: 100vw;
       max-width: 400px;
@@ -91,17 +125,46 @@ nav {
 }
 
 #call-to-action {
-  padding-top: 300px;
-  height: 100vh;
   background: $primary-color;
   color: $secondary-color;
   text-align: center;
+  .background {
+    height: 100vh;
+    padding-top: 300px;
+    background: url("../images/spotify/bursts-mobile.svg");
+    background-position: center top 30%; 
+    background-size: 200%;
+    background-repeat: no-repeat;
+    @media(min-width:$sm) {
+      background: url("../images/spotify/bursts-tablet.svg");
+      background-position: right 50% center;
+      background-size: 150%;
+      background-repeat: no-repeat;
+    }
+    @media(min-width: $lg) {
+      padding-top: 250px;
+    }
+    @media(min-width: $xl) {
+      background: url("../images/spotify/bursts.svg");
+      background-position: center 10%;
+      background-size: 170%;
+    }
+  }
   h1 {
     font-size: 2.3em;
     font-weight: 700;
     padding-bottom: 30px;
     @media(min-width:$sm) {
       font-size: 4em;
+    }
+    @media(min-width: $lg) {
+      font-size: 5em;
+      width: 570px;
+      margin: auto;
+    }
+    @media(min-width: $xl) {
+      font-size: 7em;
+      width: 80%;
     }
   }
   p {
@@ -131,15 +194,19 @@ nav {
 footer {
   background: black;
   color: white;
-  display: flex;
-  flex-direction: column;
-  padding: 30px 15px;
-  font-size: .8em;
-  @media(min-width:$lg) {
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+  .container {  
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+    font-size: .8em;
+    max-width: $max-width;
+    margin: auto;
+    @media(min-width:$lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
   }
   a {
     padding-bottom: 30px;
