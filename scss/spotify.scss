@@ -1,6 +1,11 @@
 $primary-color: rgb(41, 65, 171);
 $secondary-color: #1ed760;
+$secondary-color-light: #43E57D;
 $font-color-grey: #919496;
+$sm: 481px;
+$md: 769px;
+$lg: 1025px;
+$xl: 1201px;
 
 * {
   box-sizing: border-box;
@@ -58,6 +63,9 @@ nav {
       li {
         font-size: 2em;
         cursor: pointer;
+        &:hover {
+          color: $secondary-color;
+        }
       }
     }
     .separator {
@@ -70,6 +78,9 @@ nav {
       li {
         font-size: 1.2em;
         cursor: pointer;
+        &:hover {
+          color: $secondary-color;
+        }
       }
     }
     a {
@@ -89,11 +100,17 @@ nav {
     font-size: 2.3em;
     font-weight: 700;
     padding-bottom: 30px;
+    @media(min-width:$sm) {
+      font-size: 4em;
+    }
   }
   p {
     font-size: .8em;
     font-weight: 300;
     padding-bottom: 30px;
+    @media(max-width:$sm) {
+      font-size: 1em;
+    }
   }
   button {
     border: none;
@@ -102,6 +119,12 @@ nav {
     border-radius: 35px;
     padding: 20px;
     font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s;
+    &:hover {
+      transform: scale(1.1);
+      background: $secondary-color-light;
+    }
   }
 }
 
@@ -112,40 +135,77 @@ footer {
   flex-direction: column;
   padding: 30px 15px;
   font-size: .8em;
+  @media(min-width:$lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
   a {
     padding-bottom: 30px;
   }
   .links {
-    h2 {
-      padding-bottom: 25px;
-      color: $font-color-grey;
+    display: flex;
+    flex-direction: column;
+    @media(min-width:$md) {
+      flex-direction: row;
+      gap: 100px;
     }
-    ul {
-      list-style: none;
+    div {
       display: flex;
       flex-direction: column;
-      gap: 25px;
-      padding-bottom: 50px;
+      h2 {
+        padding-bottom: 25px;
+        color: $font-color-grey;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-bottom: 50px;
+        li {
+          cursor: pointer;
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
     }
   }
   .social {
     display: flex;
     align-items: center;
     gap: 30px;
+    @media(min-width:$lg) {
+      align-items: flex-start;
+    }
   }
   .bottom {
     display: flex;
     justify-content: space-between;
     color: $font-color-grey;
+    @media(min-width:$lg) {
+      flex: 0 0 100%;
+    }
     ul {
       list-style: none;
+      li {
+        cursor: pointer;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
     }
     .legal {
       font-size: .6em;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      width: 70%;
+      width: 75%;
+      @media(min-width:$md) {
+        font-size: .8em;
+      }
     }
     .copyright {
       width: 20%;
@@ -154,6 +214,12 @@ footer {
       flex-direction: column;
       justify-content: center;
       gap: 10px;
+      @media(min-width:$md) {
+        font-size: .8em;
+      }
+      @media(min-width:$lg) {
+        text-align: right;
+      }
     }
   }
 }
